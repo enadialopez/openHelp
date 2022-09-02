@@ -1,4 +1,3 @@
-import { BrowserRouter} from 'react-router-dom';
 import Home from './components/Home';
 import Step from './components/Step';
 import Participant from './components/Participant';
@@ -8,12 +7,12 @@ function App() {
     
 
   return (
-    <BrowserRouter>
+    <>
       <NavBar />
       <Home />
       <Step />
       <Participant />
-    </BrowserRouter>
+    </>
   );
 }
 
