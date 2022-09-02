@@ -1,7 +1,8 @@
-import Home from './components/Home';
+import Home from './components/Home'
+import About from './components/About'
+import Participant from './components/Participant'
+import NavBar from './components/NavBar'
 import Step from './components/Step';
-import Participant from './components/Participant';
-import NavBar from './components/NavBar';
 
 function App() {
     
@@ -10,6 +11,7 @@ function App() {
     <>
       <NavBar />
       <Home />
+      <About />
       <Step />
       <Participant />
     </>
