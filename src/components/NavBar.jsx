@@ -32,7 +32,7 @@ const NavBar = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Home</Dropdown.Item>
+                <Dropdown.Item onClick={goToTop} >Home</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Connect wallet</Dropdown.Item>
                 <Dropdown.Item href="#/action-1">Donate</Dropdown.Item>
                 <Dropdown.Divider />
