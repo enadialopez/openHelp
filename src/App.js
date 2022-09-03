@@ -1,6 +1,6 @@
 import Home from './components/Home'
 import About from './components/About'
-import Participant from './components/Participant'
+import Member from './components/Member'
 import NavBar from './components/NavBar'
 import Step from './components/Step';
 
@@ -13,7 +13,7 @@ function App() {
       <Home />
       <About />
       <Step />
-      <Participant />
+      <Member />
     </>
   );
 }
