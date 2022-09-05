@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/NavBar.css'
 
 import logo from '../images/navbar_logo.svg'
@@ -19,9 +20,9 @@ const NavBar = () => {
   }
     return (   
           <header className="navbar-container d-flex justify-content-sm-between px-3">
-            <div onClick={goToTop} className="d-flex align-items-center"> 
+            <Link to='/' onClick={goToTop} className="d-flex align-items-center"> 
               <img src={logo} alt={'logo'} width={'70%'} className='btn mm-button' />
-            </div>
+            </Link>
             <div className='d-flex align-items-center'>
               <button className='mm-button' onClick={onClickMetaMaskButton}>
                 <img src={mmwolf} alt='MetaMask Wolf' className='navbar-wolf-img'/>
