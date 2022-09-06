@@ -5,8 +5,8 @@ import Donate from './components/temporal/Donate';
 import MyNFT from './components/temporal/MyNFT';
 import { HomePage } from './sections/HomePage'
 import { Donations } from './sections/Donations'
-
 import './App.css'
+
 function App() {
   return (
     <>

@@ -4,8 +4,16 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 700px;
-    background-image: url(../images/image_trees.png);
+    max-height: 500px;
+    height: 500px;
+    gap: 50px;
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(../images/image_trees.png);
+
 }
 
 .btn-mint{
