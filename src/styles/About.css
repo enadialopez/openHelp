@@ -1,4 +1,5 @@
-.container {
+.about-container {
   max-width: 100%;
+  display: flex;
   margin: 0;
 }

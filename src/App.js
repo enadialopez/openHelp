@@ -7,6 +7,7 @@ import { HomePage } from './sections/HomePage'
 import { Donations } from './sections/Donations'
 
 import './App.css'
+
 function App() {
   return (
     <>
