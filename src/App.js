@@ -3,6 +3,10 @@ import About from './components/About'
 import Member from './components/Member'
 import NavBar from './components/NavBar'
 import Step from './components/Step';
+
+import Donate from './components/temporal/Donate';
+import MyNFT from './components/temporal/MyNFT';
+
 import './App.css'
 function App() {
     
@@ -14,7 +18,9 @@ function App() {
         <Home />
         <About />
         <Step />
-        <Participant />
+        {/* <Participant /> */}
+        <Donate />
+        <MyNFT />
       </div>
     </>
   );
