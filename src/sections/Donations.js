@@ -47,16 +47,10 @@ export const Donations = () => {
   }
 
   const updatePreview = (amount) => {
-    console.log('🚀 ~ updatePreview ~ amount', amount)
-    // if (!levels) return
-    // setLevelPreview(ImageLoading)
-    // if (!amount) return
+    if(!levels) return
 
     if (levels) {
-      console.log('entró 1')
-      if (amount >= 0 && amount < 10) {
-        setLevelPreview(levels[0])
-      }
+      if (amount >= 0 && amount < 10) setLevelPreview(levels[0])
 
       if (amount >= 10 && amount < 20) setLevelPreview(levels[1])
 

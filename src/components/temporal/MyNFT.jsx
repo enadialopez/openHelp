@@ -18,15 +18,7 @@ const MyNFT = ({ levelPreview }) => {
     params: {},
     msgValue: "",
   });
-  /*
-    const { runContractFunction: userList } = useWeb3Contract({
-        abi: abi,
-        contractAddress: OpenHelpAddress, 
-        functionName: "userList",
-        params: {  },
-        msgValue: "",
-    })
-    */
+
   useEffect(() => {
     if (isWeb3Enabled) updateData();
   }, [isWeb3Enabled]);
@@ -36,15 +28,6 @@ const MyNFT = ({ levelPreview }) => {
 
     if (levelsFromCall) setLevels(levelsFromCall);
 
-    /*
-        let userDataFromCall = (await userList())
-        console.log(account)
-        console.log(userDataFromCall)
-        */
-
-    //let userDataFromCall = await Web3Api.token.userList({address: OpenHelpAddress})
-    //console.log(userDataFromCall)
-    //pendiente metodo retornar mapping userList
   };
 
   return (
