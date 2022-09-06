@@ -1,29 +1,27 @@
-import Home from './components/Home'
-import About from './components/About'
-import Member from './components/Member'
-import NavBar from './components/NavBar'
-import Step from './components/Step';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
+import NavBar from './components/NavBar'
 import Donate from './components/temporal/Donate';
 import MyNFT from './components/temporal/MyNFT';
+import { HomePage } from './sections/HomePage'
+import { Donations } from './sections/Donations'
 
 import './App.css'
 function App() {
-    
-
   return (
     <>
-      <NavBar />
-      <div className='main_sections'>
-        <Home />
-        <About />
-        <Step />
-        {/* <Participant /> */}
-        <Donate />
-        <MyNFT />
-      </div>
+      <Router>
+        <NavBar />
+        <div className ='main_sections'>
+          <Routes>
+            <Route exact path='/' element={<HomePage/>} />
+            <Route exact path='/donate' element={<Donations/>} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+      </Router>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
