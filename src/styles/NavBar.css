@@ -9,6 +9,9 @@
 .mm-button {
     background: none;
     border: none;
+    color: #FBFBFB;
+    border: 1px solid #FBFBFB;
+    border-radius: 10px;
 }
 
 .navbar-wolf-img {
@@ -24,3 +27,14 @@
     border: none !important;
     box-shadow: none !important;
 }
+
+@media only screen and (max-width: 600px) {
+    .navbar-wolf-img {
+        width: 30px;        
+    }
+    .mm-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
