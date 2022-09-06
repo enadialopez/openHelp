@@ -67,7 +67,6 @@ export const Donations = () => {
 
   const handleSuccess = async (tx) => {
     await tx.wait(1)
-    //hadleNewNotification(tx)
     setAmount(0)
     setLevelPreview(levels[0])
   }
