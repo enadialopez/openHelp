@@ -1,146 +1,187 @@
 [
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_nftContractAddress",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [],
-		"name": "_donate",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "_getCategory",
-		"outputs": [
-			{
-				"internalType": "enum OpenHelp.Category",
-				"name": "_category",
-				"type": "uint8"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			}
-		],
-		"name": "_validateUser",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "_isNew",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_nftID",
-				"type": "uint256"
-			},
-			{
-				"internalType": "enum OpenHelp.Category",
-				"name": "_actualUserCategory",
-				"type": "uint8"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getPreviewNFT",
-		"outputs": [
-			{
-				"internalType": "string[5]",
-				"name": "",
-				"type": "string[5]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_nftContractAddress",
-				"type": "address"
-			}
-		],
-		"name": "setNftContractAddress",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "totalAmount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "userList",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "id",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "donationAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "nftID",
-				"type": "uint256"
-			},
-			{
-				"internalType": "enum OpenHelp.Category",
-				"name": "category",
-				"type": "uint8"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_nftContractAddress",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "_donate",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "_getLevel",
+        "outputs": [
+            {
+                "internalType": "enum OpenHelp.Level",
+                "name": "_level",
+                "type": "uint8"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address"
+            }
+        ],
+        "name": "_getUserData",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "id",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "donationAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "nftID",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "enum OpenHelp.Level",
+                        "name": "level",
+                        "type": "uint8"
+                    }
+                ],
+                "internalType": "struct OpenHelp.UserData",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address"
+            }
+        ],
+        "name": "_validateUser",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "_isNew",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_nftID",
+                "type": "uint256"
+            },
+            {
+                "internalType": "enum OpenHelp.Level",
+                "name": "_actualUserLevel",
+                "type": "uint8"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getPreviewNFT",
+        "outputs": [
+            {
+                "internalType": "string[5]",
+                "name": "",
+                "type": "string[5]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_nftContractAddress",
+                "type": "address"
+            }
+        ],
+        "name": "setNftContractAddress",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "totalAmount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "userList",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "id",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "donationAmount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "nftID",
+                "type": "uint256"
+            },
+            {
+                "internalType": "enum OpenHelp.Level",
+                "name": "level",
+                "type": "uint8"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
 ]

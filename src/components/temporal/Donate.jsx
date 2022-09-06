@@ -36,26 +36,22 @@ const Donate = () => {
     }, [isWeb3Enabled])
 
     const updateData = async () => {
-        console.log("entro")
         let levelsFromCall = (await getPreviewNFT())
-        //console.log("ccc",levelsFromCall)
         if(levelsFromCall) {
             setLevels(levelsFromCall)
             setLevelPreview(levelsFromCall[0])
-            console.log(levelsFromCall)
         }
         
     }
 
     const updatePreview = (amount) => {
+        
         if(!levels)
             return;
             
         setLevelPreview(ImageLoading)
-
         setAmount(amount)
-        console.log(amount)
-
+        
         if(levels)
         {
             if(amount >= 0 && amount < 10)   
@@ -93,7 +89,7 @@ const Donate = () => {
             }}>Donate</button>
             <span>My NFT</span>
             {levelPreview &&
-                <img src={levelPreview} width="200" />
+                <img src={levelPreview} width="200" alt='NFT Preview'/>
             }
             
         </div>

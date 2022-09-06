@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { abi, contractAddresses } from '../constants'
 import { useWeb3Contract, useMoralis } from 'react-moralis'
-import ImageLoading from "../images/loading.gif"
+import ImageLoading from '../images/loading.gif'
 
 import { Button } from '../components/Button'
 
@@ -39,22 +39,15 @@ export const Donations = () => {
   }, [isWeb3Enabled])
 
   const updateData = async () => {
-    console.log('entro')
     let levelsFromCall = await getPreviewNFT()
     if (levelsFromCall) {
       setLevels(levelsFromCall)
       setLevelPreview(levelsFromCall[0])
-      console.log("🚀 ~ updateData ~ levelsFromCall", levelsFromCall)
     }
   }
 
   const updatePreview = (amount) => {
-    if (!levels) return
-
-    setLevelPreview(ImageLoading)
-
-    setAmount(amount)
-    console.log('amount:', amount)
+    if(!levels) return
 
     if (levels) {
       if (amount >= 0 && amount < 10) setLevelPreview(levels[0])
@@ -66,6 +59,9 @@ export const Donations = () => {
       if (amount >= 30 && amount < 40) setLevelPreview(levels[3])
 
       if (amount >= 40) setLevelPreview(levels[4])
+      
+      setAmount(amount)
+
     }
   }
 
@@ -82,22 +78,30 @@ export const Donations = () => {
         <h1 className='card-title'>Donate</h1>
         <h3 className='card-subtitle'>You can any amount you want!</h3>
         <div className='card-input-area'>
-          <input className='card-input' type='number' onChange={(e) => updatePreview(e.target.value)} />
+          <input
+            className='card-input'
+            type='number'
+            onChange={(e) => updatePreview(e.target.value)}
+          />
           <p className='card-input-currency'>ETH</p>
           <p className='card-input-caption'>
             Select the amount you want to donate to Openhelp!
           </p>
         </div>
-        <Button text='Donate' disabled={!amount || amount === 0} onClick={async () => {
-                await _donate({
-                    onSuccess: handleSuccess
-                })
-            }}/>
+        <Button
+          text='Donate'
+          disabled={!amount || amount <= 0}
+          onClick={async () => {
+            await _donate({
+              onSuccess: handleSuccess,
+            })
+          }}
+        />
         <p className='card-input-caption-bottom'>
           Thank you very much for your donation, it helps us a lot.
         </p>
       </div>
-      <MyNFT />
+      {amount > 0 && <MyNFT levelPreview={levelPreview} />}
     </div>
   )
 }

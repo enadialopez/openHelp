@@ -26,11 +26,9 @@ const NavBar = () => {
 
   useEffect(() => {
     Moralis.onAccountChanged((account) => {
-      console.log(`Account changed to ${account}`)
       if (account == null) {
           window.localStorage.removeItem("connected")
           deactivateWeb3()
-          console.log("Null account found")
       }
   })
   }, [])
