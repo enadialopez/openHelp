@@ -55,6 +55,7 @@ export const Donations = () => {
 
     setAmount(amount)
     console.log('amount:', amount)
+    console.log('levels:', levels)
 
     if (levels) {
       if (amount >= 0 && amount < 10) setLevelPreview(levels[0])
@@ -70,6 +71,7 @@ export const Donations = () => {
   }
 
   const handleSuccess = async (tx) => {
+    console.log("CCCCCXXXX")
     await tx.wait(1)
     //hadleNewNotification(tx)
     setAmount(0)
@@ -97,7 +99,7 @@ export const Donations = () => {
           Thank you very much for your donation, it helps us a lot.
         </p>
       </div>
-      <MyNFT />
+      <MyNFT levelPreview={levelPreview} />
     </div>
   )
 }
