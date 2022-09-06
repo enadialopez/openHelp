@@ -14,7 +14,7 @@ function App() {
         <Home />
         <About />
         <Step />
-        <Participant />
+        <Member />
       </div>
     </>
   );
