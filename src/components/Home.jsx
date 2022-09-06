@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Home.css';
+import { Button } from './Button';
 
 const Home = () => {
     return (
@@ -11,7 +12,9 @@ const Home = () => {
                 <h2 className="py-5" >Join our waitlist for the pre-sale</h2>
             </div>
             <div className="d-grid gap-2 d-sm-flex py-5 justify-content-sm-center">
-                <Link to='/donate' className="btn fw-bold btn-mint" type="button"> Mint NFT</Link>
+                <Link to='/donate'> 
+                    <Button text='Mint NFT'/>
+                </Link>
             </div>
         </div>
     )
