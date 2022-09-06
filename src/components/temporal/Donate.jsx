@@ -42,20 +42,21 @@ const Donate = () => {
         if(levelsFromCall) {
             setLevels(levelsFromCall)
             setLevelPreview(levelsFromCall[0])
-            console.log(levelsFromCall)
+            //console.log(levelsFromCall)
         }
         
     }
 
     const updatePreview = (amount) => {
+        
         if(!levels)
             return;
             
         setLevelPreview(ImageLoading)
 
         setAmount(amount)
-        console.log(amount)
-
+        //console.log(amount, levels)
+        
         if(levels)
         {
             if(amount >= 0 && amount < 10)   

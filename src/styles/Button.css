@@ -1,0 +1,22 @@
+.button-component {
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 2px 3px grey;
+  background-color: #EEFFEA;
+  min-width: 240px;
+  min-height: 40px;
+  font-size: 24px;
+  transition: all .2s;
+  color: #024D23;
+  font-weight: 600;
+}
+
+.button-component:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1px 3px grey;
+}
+
+.button-component:disabled {
+  background-color: grey;
+  color: #a1cfb7;
+}
