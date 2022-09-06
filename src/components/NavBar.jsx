@@ -35,7 +35,6 @@ const NavBar = () => {
   
 
   const onClickMetaMaskButton = async () => {
-    // TODO: Integrar con solidity para abrir MetaMask
     await enableWeb3()
     if(typeof window !== "undefined") {
       window.localStorage.setItem("connected", "injected")
