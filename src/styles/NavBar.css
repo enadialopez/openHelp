@@ -4,6 +4,7 @@
     padding: 0;
     background-color: rgb(126,155,118);
     position: fixed;
+    z-index: 1;
 }
 
 .mm-button {
