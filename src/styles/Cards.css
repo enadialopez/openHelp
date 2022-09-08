@@ -1,0 +1,13 @@
+
+.project-cards-container{ 
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  margin: 100px 20px;
+} 
+
+.cards-title {
+  display: flex;
+  align-self: flex-end;
+  margin-right: 150px;
+}
