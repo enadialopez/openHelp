@@ -74,7 +74,7 @@ export const Donations = () => {
   }
 
   const handleSuccess = async (tx) => {
-    await tx.wait(amount)
+    await tx.wait(1)
     setAmount(0)
     setLevelPreview(levels[0])
   }
