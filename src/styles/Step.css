@@ -1,4 +1,33 @@
 .step-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
   max-width: 100%;
   margin: 0;
 }
+
+.carousel {
+  width: 50%;
+}
+
+.step-col-text {
+  width: 30%;
+}
+
+.step-text-class {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  color: #7E9B76;
+  padding: 0 70px;
+}
+
+.step-link-class {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
