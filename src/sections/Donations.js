@@ -14,7 +14,7 @@ export const Donations = () => {
       'https://api.etherscan.io/api?module=stats&action=ethprice&apikey=BFZGWEYIIJQDA7HIRZ1Z5F9BJ5A9T261C8'
     )
       .then((data) => data.json())
-      .then(({ result }) => console.log('result', setEthPrice(result.ethusd)))
+      .then(({ result }) => setEthPrice(result.ethusd))
   }, [])
 
   const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
