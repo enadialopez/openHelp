@@ -17,10 +17,6 @@ export const Donations = () => {
       .then(({ result }) => console.log('result', setEthPrice(result.ethusd)))
   }, [])
 
-  useEffect(() => {
-    console.log('🚀 ~ Donations ~ ethPrice', ethPrice)
-  }, [ethPrice])
-
   const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
   const chainId = parseInt(chainIdHex)
   const OpenHelpAddress =
@@ -78,7 +74,7 @@ export const Donations = () => {
   }
 
   const handleSuccess = async (tx) => {
-    await tx.wait(1)
+    await tx.wait(amount)
     setAmount(0)
     setLevelPreview(levels[0])
   }
