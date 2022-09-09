@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { abi, contractAddresses } from '../constants'
 import { useWeb3Contract, useMoralis } from 'react-moralis'
-import ImageLoading from '../images/loading.gif'
 
 import { Button } from '../components/Button'
 
@@ -9,6 +8,19 @@ import '../styles/Donations.css'
 import MyNFT from '../components/temporal/MyNFT'
 
 export const Donations = () => {
+  const [ethPrice, setEthPrice] = useState(0)
+  useEffect(() => {
+    fetch(
+      'https://api.etherscan.io/api?module=stats&action=ethprice&apikey=BFZGWEYIIJQDA7HIRZ1Z5F9BJ5A9T261C8'
+    )
+      .then((data) => data.json())
+      .then(({ result }) => console.log('result', setEthPrice(result.ethusd)))
+  }, [])
+
+  useEffect(() => {
+    console.log('🚀 ~ Donations ~ ethPrice', ethPrice)
+  }, [ethPrice])
+
   const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
   const chainId = parseInt(chainIdHex)
   const OpenHelpAddress =
@@ -47,7 +59,7 @@ export const Donations = () => {
   }
 
   const updatePreview = (amount) => {
-    if(!levels) return
+    if (!levels) return
 
     if (levels) {
       if (amount >= 0 && amount < 10) setLevelPreview(levels[0])
@@ -59,9 +71,9 @@ export const Donations = () => {
       if (amount >= 30 && amount < 40) setLevelPreview(levels[3])
 
       if (amount >= 40) setLevelPreview(levels[4])
-      
-      setAmount(amount)
 
+      const weiAmount = (ethPrice * amount) / 1000000000000000000;
+      setAmount(weiAmount)
     }
   }
 
@@ -82,7 +94,7 @@ export const Donations = () => {
             type='number'
             onChange={(e) => updatePreview(e.target.value)}
           />
-          <p className='card-input-currency'>ETH</p>
+          <p className='card-input-currency'>USD</p>
           <p className='card-input-caption'>
             Select the amount you want to donate to Openhelp!
           </p>
